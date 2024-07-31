@@ -2,7 +2,7 @@ use std::{
     array::IntoIter,
     ops::{Add, AddAssign, Div, DivAssign, Mul, MulAssign, Sub, SubAssign},
     simd::num::SimdFloat as _,
-    slice::Iter,
+    slice::{Iter, IterMut},
 };
 
 use approximately::ApproxEq;
@@ -45,6 +45,10 @@ impl Floatx4 {
 
     pub fn iter(&self) -> Iter<Float> {
         self.0.as_array().iter()
+    }
+
+    pub fn iter_mut(&mut self) -> IterMut<Float> {
+        self.0.as_mut_array().iter_mut()
     }
 
     pub fn copy_from_slice(slice: &[Float]) -> Self {

@@ -2,7 +2,7 @@
 use std::{
     array::IntoIter,
     ops::{Add, AddAssign, Div, DivAssign, Mul, MulAssign, Sub, SubAssign},
-    slice::Iter,
+    slice::{Iter, IterMut},
 };
 
 use approximately::ApproxEq;
@@ -40,6 +40,9 @@ impl Floatx4 {
         self.0.iter()
     }
 
+    pub fn iter_mut(&mut self) -> IterMut<Float> {
+        self.0.iter_mut()
+    }
     pub fn copy_from_slice(slice: &[Float]) -> Self {
         Self(slice.try_into().unwrap())
     }

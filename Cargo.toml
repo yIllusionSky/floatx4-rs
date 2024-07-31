@@ -1,6 +1,6 @@
 [package]
 name = "floatx4"
-version = "1.0.0"
+version = "1.0.1"
 edition = "2021"
 authors = ["YaolinQing <d161442079@163.com>"]
 license = "Apache-2.0"
